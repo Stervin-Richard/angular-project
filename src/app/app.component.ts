@@ -12,9 +12,40 @@ import { NewComponent } from './new/new.component';
 })
 export class AppComponent {
   title = 'project';
-  name = "All Services"
  
-  value(variable:string){
-    this.name = variable
+
+  serviceMenu =[
+    {
+      "id":1,
+      "Name":"All Services"
+    },
+    {
+      "id":2,
+      "Name":"Constructions"
+    },
+    {
+      "id":3,
+      "Name":"Renovations"
+    },
+    {
+      "id":4,
+      "Name":"Big Projects"
+    },
+    {
+      "id":5,
+      "Name":"Consulting"
+    },
+    {
+      "id":6,
+      "Name":"Architecture"
+    },
+    {
+      "id":7,
+      "Name":"Concrete Transport"
+    }
+  ]
+  newservice='All Services'
+  childService(message:string){
+    this.newservice= message
   }
 }

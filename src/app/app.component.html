@@ -1,8 +1,6 @@
-<app-new [name]="name"></app-new>
-<a (click)="value('All Services')"> ALL SERVICES</a><br>
-<a (click)="value('Constructions')"> CONSTRUCTIONS</a><br>
-<a (click)="value('Renovations')"> RENOVATIONS</a><br>
-<a (click)="value('Big Projects')"> BIG PROJECTS</a><br>
-<a (click)="value('Consulting')"> CONSULTING</a><br>
-<a (click)="value('Architecture')"> ARCHITECTURE</a><br>
-<a (click)="value('Concrete Transport')"> CONCRETE TRANSPORT</a>
+<div class="background">
+    <h1>{{newservice}}</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus adipisci consequatur id tenetur voluptatum! Praesentium culpa ratione enim quos quo veniam alias commodi vitae, nostrum, pariatur ipsum laboriosam esse iusto facilis optio! Corrupti excepturi labore omnis doloremque ad culpa odit nam officia fugiat ut. Optio dolore aliquam placeat fugiat sunt?</p>
+</div>
+<p>Home / {{newservice}}</p>
+<app-new [names]="serviceMenu" (service)="childService($event)"></app-new>
