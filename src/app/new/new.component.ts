@@ -12,11 +12,7 @@ export class NewComponent {
   @Output() service = new EventEmitter();
 
   value(num:number){
-    for(let name of this.names){
-      if(name.id == num){
-        this.service.emit(name.Name)
-      }
-    }
+    this.service.emit(num)
   }
  
 

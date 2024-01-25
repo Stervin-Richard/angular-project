@@ -45,7 +45,7 @@ export class AppComponent {
     }
   ]
   newservice='All Services'
-  childService(message:string){
-    this.newservice= message
+  childService(message:number){
+    this.newservice= this.serviceMenu[message-1].Name
   }
 }

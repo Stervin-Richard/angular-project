@@ -3,4 +3,6 @@
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus adipisci consequatur id tenetur voluptatum! Praesentium culpa ratione enim quos quo veniam alias commodi vitae, nostrum, pariatur ipsum laboriosam esse iusto facilis optio! Corrupti excepturi labore omnis doloremque ad culpa odit nam officia fugiat ut. Optio dolore aliquam placeat fugiat sunt?</p>
 </div>
 <p>Home / {{newservice}}</p>
-<app-new [names]="serviceMenu" (service)="childService($event)"></app-new>
+@for(service of serviceMenu;track service.id){
+    <app-new [names]="service" (service)="childService($event)"></app-new>
+}
