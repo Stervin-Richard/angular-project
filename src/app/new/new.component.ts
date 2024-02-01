@@ -1,9 +1,11 @@
+import { UpperCasePipe } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-new',
   standalone: true,
-  imports: [],
+  imports: [UpperCasePipe],
   templateUrl: './new.component.html',
   styleUrl: './new.component.css'
 })
