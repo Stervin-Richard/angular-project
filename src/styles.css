@@ -1,11 +1,22 @@
 
 a{
-    display: block;
     color: black;
     cursor: pointer;
 }
-
+.pc{
+    display: grid;
+    width: 30%;
+    border-bottom: 1px solid black;
+    grid-template-columns: 2fr 1fr;
+}
+span{
+    display: grid;
+    justify-content: right;
+}
 a:hover{
+    color: orange;
+}
+.pc:hover{
     color: orange;
 }
 p{
@@ -34,7 +45,18 @@ p{
         overflow-x: scroll;
         padding: 20px;
     }
+    .hidden::-webkit-scrollbar{
+        display: none;
+    }
     .row{
        width: 1100px;
+    }
+    .pc{
+        display: inline;
+        width: auto;
+        border-bottom: none;
+    }
+    span{
+        display: none;
     }
 }
