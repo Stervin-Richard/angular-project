@@ -1,62 +1,84 @@
-
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
 a{
-    color: black;
+    display: inline;
+    font-size: 16px;
+    color: #767676;
     cursor: pointer;
 }
+.row{
+    width: 290px;
+    margin-left: 80px;
+}
 .pc{
+    position: relative;
+    height: 41px;
+    border-bottom: 1px solid #EEEEEE;
     display: grid;
-    width: 30%;
-    border-bottom: 1px solid black;
-    grid-template-columns: 2fr 1fr;
+    align-content: center;
 }
-span{
-    display: grid;
-    justify-content: right;
+.arrow::before{
+    font-family: 'Font Awesome 6 Free';
+    content: "\f105";
+    font-weight: 800;
+    font-size: 16px;
+    color: #767676;
+    position: absolute;
+    right: 0;
 }
-a:hover{
-    color: orange;
-}
+
 .pc:hover{
-    color: orange;
+    a, .arrow::before{
+        color: #FFAA1C;
+    }
 }
+
 p{
-    padding: 10px;
+    padding-left: 80px;
 }
 .background{
     background-color: black;
     color: white;
-    padding: 10px;
+    padding: 10px 80px;
+}
+.background p{
+    padding: 0;
+    width: 60%;
 }
 
 @media screen and (max-width:600px) {
     
     a{
         display: inline;
-        border: 1px solid black;
+        border: 1px solid #EEEEEE;
         margin: 10px;
         padding: 10px 20px;
         border-radius: 20px;
     }
     a:hover{
-        border-color: orange;
+        border-color: #FFAA1C ;
     }
     .hidden{
         width: 100vw;
         overflow-x: scroll;
-        padding: 20px;
+        padding: 20px 0;
     }
     .hidden::-webkit-scrollbar{
         display: none;
     }
     .row{
-       width: 1300px;
+       width: 1400px;
     }
     .pc{
         display: inline;
         width: auto;
         border-bottom: none;
     }
-    span{
+    .arrow::before{
         display: none;
     }
+   
 }

@@ -1,4 +1,5 @@
-<div class="pc">
-    <a (click)="value(names.id)">{{names.Name | uppercase}}</a>
-    <span>></span>
-</div>
+@for(service of names;track service.id){
+    <div class="pc">
+        <a (click)="value(service.id)" class="arrow">{{service.Name | uppercase}}</a>
+    </div>
+}

@@ -5,8 +5,6 @@
 <p>Home / {{newservice}}</p>
 <div class="hidden">
     <div class="row">
-        @for(service of serviceMenu;track service.id){
-            <app-new [names]="service" (service)="childService($event)"></app-new>
-        }
+        <app-new [names]="serviceMenu" (service)="childService($event)"></app-new>
     </div>
 </div>
