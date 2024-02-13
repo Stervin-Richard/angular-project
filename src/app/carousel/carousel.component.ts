@@ -1,5 +1,6 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, NgZone} from '@angular/core';
 import { NgClass,NgFor,NgIf } from '@angular/common';
+
 interface carouselImages{
   imageSrc:string;
   imageAlt:string;
@@ -13,24 +14,44 @@ interface carouselImages{
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
-export class CarouselComponent implements OnInit{
+export class CarouselComponent implements OnInit, AfterViewInit{
   @Input() images: carouselImages[]=[]
   @Input() indicators = true;
   @Input() controls = true;
   @Input() autoSlide = false;
   @Input() slideInterval = 3000;
+  constructor(private _zone: NgZone){}
 
   selectedIndex = 0;
 
   ngOnInit(): void {
-    if(this.autoSlide){
-      this.autoSlideImages();
-    }
+    
+  }
+
+  ngAfterViewInit(): void {
+
+    this._zone.runOutsideAngular(()=>{
+
+      this.autoSlideImages()
+    });
+
+    
+
+
+    
+    
+
   }
 
   autoSlideImages(): void{
     setInterval(() => {
-      this.onNextClick();
+      if( this.autoSlide ){
+        this._zone.run(()=>{
+
+          this.onNextClick();
+
+        });
+      }
     }, this.slideInterval)
   }
 
